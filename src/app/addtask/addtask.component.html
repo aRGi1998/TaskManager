@@ -1,0 +1,37 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="flex justify-between items-center p-0 mt-5">
+    <div class="container mx-auto mt-5">
+        <div>
+            <label for="title" class="block text-sm font-medium leading-6 text-gray-900">Task</label>
+            <div class="relative mt-2 rounded-md shadow-sm">
+                <input type="text" name="title" id="title"
+                    class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    placeholder="Enter Your Task" formControlName="name">
+            </div>
+        </div>
+        <div>
+            <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
+            <div class="relative mt-2 rounded-md shadow-sm">
+                <input type="text" name="description" id="description"
+                    class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    placeholder="Enter Your description" formControlName="description">
+            </div>
+        </div>
+        <div>
+            <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Status of Task</label>
+            <div class="relative mt-2 rounded-md shadow-sm">
+                <input type="checkbox" formControlName="isChecked" id="checkbox"
+                    class="form-checkbox h-5 w-5 text-blue-600">
+                <label for="checkbox" class="ml-2 text-gray-700">Completed</label>
+            </div>
+        </div>
+        <div>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 flex items-center">
+                <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M10 2a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H4a1 1 0 1 1 0-2h6V3a1 1 0 0 1 1-1z" />
+                </svg>
+                Add Task
+            </button>
+        </div>
+    </div>
+</form>

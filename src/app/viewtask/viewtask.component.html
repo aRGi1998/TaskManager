@@ -1,0 +1,44 @@
+<table class="min-w-full divide-y divide-gray-200 mt-5">
+    <thead class="bg-gray-50">
+        <tr>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Title
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Description
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Status
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+        <tr *ngFor="let task of tasks">
+            <td class="px-6 py-4 whitespace-nowrap">
+                {{ task.title }}
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+                {{ task.description }}
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+                {{task.completed}}
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap">
+                <button
+                    class="flex items-center justify-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+                    (click)="onDelete(task.id)">
+                    <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M14.293 5.293a1 1 0 1 0-1.414-1.414L10 8.586 7.121 5.707a1 1 0 1 0-1.414 1.414L8.586 10l-2.879 2.879a1 1 0 1 0 1.414 1.414L10 11.414l2.879 2.879a1 1 0 1 0 1.414-1.414L11.414 10l2.879-2.879z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
